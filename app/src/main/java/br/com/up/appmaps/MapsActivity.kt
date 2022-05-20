@@ -88,7 +88,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     fun requestUserLocation(){
 
         val locationRequest = LocationRequest()
-        locationRequest.interval = 10
+        //locationRequest.interval = 10
        // locationRequest.priority = LocationRequest.PRIORITY_LOW_POWER
 
 
@@ -156,4 +156,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap = googleMap
         mMap.mapType = GoogleMap.MAP_TYPE_HYBRID
     }
+
+
+    //https://maps.googleapis.com/maps/api/place/textsearch/json?query=parques+Curitiba&key=AIzaSyDyFUltXibk_rGCb7Nak3wB5HC_KamkKRI
 }
