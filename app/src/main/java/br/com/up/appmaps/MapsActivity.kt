@@ -19,6 +19,8 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import br.com.up.appmaps.databinding.ActivityMapsPlaceBinding
+import br.com.up.appmaps.model.Place
+import br.com.up.appmaps.network.PlaceAPI
 import com.google.android.gms.location.*
 import com.google.android.gms.maps.model.BitmapDescriptor
 import com.google.android.gms.maps.model.Marker
@@ -30,7 +32,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var binding: ActivityMapsPlaceBinding
     private var fusedLocationProviderClient :
             FusedLocationProviderClient? = null
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,6 +66,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
             getUserLastLocation()
         }
+
+        PlaceAPI().requestPlaceBySearchTerm("Universidade+Positivo")
 
     }
 
@@ -157,6 +160,4 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.mapType = GoogleMap.MAP_TYPE_HYBRID
     }
 
-
-    //https://maps.googleapis.com/maps/api/place/textsearch/json?query=parques+Curitiba&key=AIzaSyDyFUltXibk_rGCb7Nak3wB5HC_KamkKRI
 }
