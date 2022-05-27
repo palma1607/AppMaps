@@ -67,7 +67,16 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             getUserLastLocation()
         }
 
-        PlaceAPI().requestPlaceBySearchTerm("Universidade+Positivo")
+        PlaceAPI().requestPlaceBySearchTerm("kart",
+                object : PlaceAPI.OnPlaceResponseListener{
+                    override fun onSuccess(places: ArrayList<Place>?) {
+
+
+
+                    }
+
+                }
+            )
 
     }
 
